@@ -1,0 +1,162 @@
+/*CSS GRID, NOS PERMITE REALIZAR UNA PÁGINA RESPONSIVE*/
+body{
+    margin: 0;/*margen externa*/
+    padding: 0;/*margen interna*/
+    box-sizing: border-box;/*Sirve para dimensionar elementos, es decir
+    Si el elemento tiene algun borde (border) o relleno (padding), este 
+    es entonces añadido al ancho y alto a alcanzar el tamaño de la caja 
+    que es desplegada en pantalla. Esto significa que cuando se definen el ancho y alto, 
+    se tiene que ajustar el valor definido para permitir cualquier borde o relleno que se 
+    pueda añadir*/ /*border-box si se define un elemento con un ancho de 100 pixeles. 
+    Esos 100 pixeles incluíran cualquier borde o relleno que se añadan, y la caja de 
+    contenido se encogerá para absorber ese ancho extra. Esto típicamente hace mucho 
+    más fácil dimensionar elementos*/
+    font-family: sans-serif;/*fuente*/
+   }
+
+   /*CSS Grid*/
+   h1{
+    text-align: center;
+    font-size: 50px;
+  }
+
+  
+/*div contenedor centrado*/
+.contenedor{
+    width: 100%;
+    margin: auto; /*para que centre*/
+  }
+
+  /*clase caja, cada una de las cajitas*/
+  .caja{
+    margin: 10px;/*para que se separen*/
+    font-size: 50px;
+    text-align: center; /*se centren los números*/
+  }
+  
+  /*los div que están dentro de caja columna*/
+.caja_columna div{
+    background: #FFB6C1; /*color de fondo*/
+    padding: 2em;/*unidad relativa 2em=24puntos*/
+  }
+
+  /*caja columna*/
+.caja_columna{
+    display: grid; /*para utilizar css grid, 
+    se define la pantalla en una cuadrícula*/
+  }
+
+  /*media queries nos va a ayudar a modificar 
+  nuestra página respecto a nuestro aspecto reponsive*/
+@media(min-width:520px){
+    /*a la clase caja columna le vamos a poner un grid*/
+    .caja_columna{
+      grid-template-columns: repeat(2,1fr);/*número de 
+      columnas que queremos. Cantidad de columnas y 
+      la longitud en este caso es una unidad fraccionaria 
+      que te da la misma medida de las cajas*/
+    }
+  }
+
+
+  @media(min-width:1024px){
+    .contenedor{
+      width: 1024px;/*un ancho de 1024 px 
+      para que estén alineadas todas las cajas*/
+    }
+
+    /*a la clase caja columna le vamos a poner un grid*/
+  .caja_columna{
+    grid-auto-rows: minmax(250px,auto); /*min max a 
+    las filas. minimo medida de la fila y máximo por 
+    defecto auto para centrar*/
+    grid-template-columns: repeat(3,1fr);
+  }
+
+    /*ponerle estilos a las caja que está dentro de caja_columna*/
+  /*nth-child es como un arreglo, nosotros querems poner
+   estilos a la clase caja y tenemos 8 clases con el mismo nombre,
+    entonces si nosotros por ejemplo queremos poner estilos 
+    a la caja 2, en los paréntesis ponermos la posción*/
+  .caja_columna .caja:nth-child(2){
+
+    /*estilos*/
+    grid-column: 2/4 ; /*ubicación y tamaño. posición 2 y 
+    el tamaño de 4 */
+    grid-row: 1/3 ;
+  }
+  
+  .caja_columna .caja:nth-child(3){ 
+
+    /*estilos*/
+    grid-row: 2/5 ; /*ubicación y tamaño. posición 2 y 
+    el tamaño de 5 */
+  }
+
+  .caja_columna .caja:nth-child(8){
+
+    /*estilos*/
+    grid-column: 1/4 ; /*ubicación y tamaño. posición 1 y el tamaño de 4 */
+  }
+
+}
+
+/*id caja 1*/
+/*
+contain: Escala la imagen al mayor tamaño posible sin recortarla ni estirarla.
+cover: Escala la imagen al mayor tamaño posible sin estirarla. Si las proporciones 
+de la imagen difieren de las del elemento, es recortada vertical u horizontalmente 
+para que no quede un espacio vacío.*/
+#caja1:hover{ /*cambiar el estilo por una imagen */
+	border: 1px solid red; 
+    background-image: url("./images/1.jpg");
+    background-size: cover; /*Tamaño de la imagen o fondo, se renderiza la imagen*/
+}
+
+
+#caja2:hover{ /*cambiar el estilo por una imagen */
+	border: 1px solid red; 
+    background-image: url("./images/2.jpg");
+    background-size: cover; /*Tamaño de la imagen o fondo, se renderiza la imagen*/
+}
+
+#caja3:hover{ /*cambiar el estilo por una imagen */
+	border: 1px solid red; 
+    background-image: url("./images/3.jpg");
+    background-size: cover; /*Tamaño de la imagen o fondo, se renderiza la imagen*/
+}
+
+#caja4:hover{ /*cambiar el estilo por una imagen */
+	border: 1px solid red; 
+    background-image: url("./images/4.jpg");
+    background-size: cover; /*Tamaño de la imagen o fondo, se renderiza la imagen*/
+}
+
+#caja5:hover{ /*cambiar el estilo por una imagen */
+	border: 1px solid red; 
+    background-image: url("./images/5.jpg");
+    background-size: cover; /*Tamaño de la imagen o fondo, se renderiza la imagen*/
+}
+
+#caja6:hover{ /*cambiar el estilo por una imagen */
+	border: 1px solid red; 
+    background-image: url("./images/6.jpg");
+    background-size: cover; /*Tamaño de la imagen o fondo, se renderiza la imagen*/
+}
+
+#caja7:hover{ /*cambiar el estilo por una imagen */
+	border: 1px solid red; 
+    background-image: url("./images/7.jpg");
+    background-size: cover; /*Tamaño de la imagen o fondo, se renderiza la imagen*/
+}
+
+#caja8:hover{ /*cambiar el estilo por una imagen */
+	border: 1px solid red; 
+    background-image: url("./images/8.jpg");
+    background-size: contain; /*Tamaño de la imagen o fondo, se renderiza la imagen*/
+}
+
+
+
+
+
